@@ -1,0 +1,27 @@
+<?php
+$errors = array();
+if (isset($_POST['submit']))
+{
+    require 'validate.inc';
+    validateName($errors, $_POST, 'surname');
+    
+    if ($errors)
+    {
+        echo '<h1>Invalid, correct the following errors:</h1>';
+        foreach ($errors as $field => $error)
+            echo "$field $error<br/>";
+        
+        // Tampilkan kembali form jika ada error
+        include 'form.inc';
+    }
+    else
+    {
+        echo 'Form submitted successfully with no errors';
+    }
+}
+else
+{
+    // Tampilkan form kosong saat pertama kali diakses
+    include 'form.inc';
+}
+?>
