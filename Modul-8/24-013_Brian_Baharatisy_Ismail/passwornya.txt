@@ -1,0 +1,7 @@
+<===========1===========>
+username = owner
+password = password
+
+<=============2===============>
+username = kasir
+password = password
